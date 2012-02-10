@@ -1,5 +1,7 @@
 package st.crexi.as3.framework.mercado.core.interfaces
 {
+	import st.crexi.as3.framework.cafe.core.interfaces.IOrder;
+
 	public interface IClient
 	{
 		/**
@@ -16,6 +18,6 @@ package st.crexi.as3.framework.mercado.core.interfaces
 		 * @return 
 		 * 
 		 */		
-		function get order():*;
+		function get order():IOrder;
 	}
 }
