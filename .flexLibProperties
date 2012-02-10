@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flexLibProperties includeAllClasses="true" useMultiPlatformConfig="false" version="3">
+  <includeClasses>
+    <classEntry path="st.crexi.as3.framework.mercado.core.utils.Liner"/>
+    <classEntry path="st.crexi.as3.framework.mercado.core.Converter"/>
+    <classEntry path="st.crexi.as3.framework.mercado.core.interfaces.IClient"/>
+    <classEntry path="st.crexi.as3.framework.mercado.core.utils.Listener"/>
+    <classEntry path="st.crexi.as3.framework.mercado.core.utils.Signal"/>
+    <classEntry path="st.crexi.as3.framework.mercado.core.utils.CallBacks"/>
+    <classEntry path="st.crexi.as3.framework.mercado.core.AbstCoordinator"/>
+    <classEntry path="st.crexi.as3.framework.mercado.core.interfaces.ICoordinator"/>
+    <classEntry path="st.crexi.as3.framework.mercado.core.Adjuster"/>
+    <classEntry path="st.crexi.as3.framework.mercado.core.utils.Align"/>
+    <classEntry path="st.crexi.as3.framework.mercado.core.AbstClient"/>
+  </includeClasses>
+  <includeResources/>
+  <namespaceManifests/>
+</flexLibProperties>
