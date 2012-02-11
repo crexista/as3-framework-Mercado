@@ -1,11 +1,16 @@
 package st.crexi.as3.framework.mercado.core
 {
+	import st.crexi.as3.framework.cafe.core.Waiter;
 	import st.crexi.as3.framework.mercado.core.interfaces.IClient;
 	import st.crexi.as3.framework.mercado.core.interfaces.ICoordinator;
 
 	public class AbstClient
 	{
+				
 		internal var $coordinator:ICoordinator
+		
+		
+		private var _waiter:Waiter;
 		
 		final public function sendSignal(signal:String, ...args):void
 		{
@@ -19,12 +24,14 @@ package st.crexi.as3.framework.mercado.core
 		 */		
 		final internal function $start():void
 		{
-			
+			if (!_waiter) _waiter = new Waiter(null);
+			_waiter.start();
 		}
 
 		
 		public function AbstClient()
 		{
+			
 		}
 		
 	}

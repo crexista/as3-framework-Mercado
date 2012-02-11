@@ -65,6 +65,7 @@ package st.crexi.as3.framework.mercado.core
 			var obj:Object = _adjuster.contain;
 			for each(var client:AbstClient in _adjuster.contain) {
 				client.$coordinator = ICoordinator(this);
+				client.$start();
 			}
 			
 		}

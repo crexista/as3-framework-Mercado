@@ -6,13 +6,20 @@ package st.crexi.as3.framework.mercado.core
 	public class Adjuster
 	{
 		
+		
 		private var _clientLine:Array;
 		
+		
 		private var _clients:Vector.<IClient>
+		
+		
 		
 		public function beginings(clients:Array):Align
 		{
 			_clients = Vector.<IClient>(clients);
+			for each(var client:AbstClient in clients) {
+				client.$start();
+			}
 			_clientLine.push(_clients);
 			return new Align(_clientLine);
 		}
