@@ -14,10 +14,10 @@ package st.crexi.as3.framework.mercado.core.interfaces
 		
 		
 		/**
-		 * 
+		 * このクライアントが持つrequestの配列を返します
 		 * @return 
 		 * 
 		 */		
-		function get order():IOrder;
+		function get requests():Array;
 	}
 }

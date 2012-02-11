@@ -11,6 +11,16 @@ package st.crexi.as3.framework.mercado.core
 		{
 			$coordinator.call(IClient(this), signal, args);
 		}
+		
+		
+		/**
+		 * requestを一気にスタートさせます
+		 * 
+		 */		
+		final internal function $start():void
+		{
+			
+		}
 
 		
 		public function AbstClient()
