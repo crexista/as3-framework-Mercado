@@ -22,7 +22,7 @@ package st.crexi.as3.framework.mercado.core
 		
 		/**
 		 * clientの実行順序、clientそのものを格納するクラスインスタンスです 
-		 */		
+		 */	
 		private var _adjuster:Adjuster;
 		
 		
@@ -50,6 +50,23 @@ package st.crexi.as3.framework.mercado.core
 		}
 		
 		
+		/**
+		 * cooridnator内部で起動されたclient群を指定された順番通りに起動します
+		 * 
+		 */		
+		final public function start():void
+		{
+			
+			_adjuster = ICoordinator(this).clients(_adjuster);
+			_liner = ICoordinator(this).bind(_liner);
+			
+			for each(var client:AbstClient in _adjuster.contain) {
+				client.$coordinator = ICoordinator(this);
+				client.$start();
+			}						
+		}
+		
+		
 		
 		/**
 		 * コンストラクタです
@@ -60,15 +77,8 @@ package st.crexi.as3.framework.mercado.core
 			_adjuster = new Adjuster();
 			_liner = new Liner();
 			
-			_adjuster = ICoordinator(this).clients(_adjuster);
-			_liner = ICoordinator(this).bind(_liner);
-			var obj:Object = _adjuster.contain;
-			for each(var client:AbstClient in _adjuster.contain) {
-				client.$coordinator = ICoordinator(this);
-				client.$start();
-			}
-			
 		}
+		
 		
 	}
 }

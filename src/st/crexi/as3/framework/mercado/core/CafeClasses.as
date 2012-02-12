@@ -8,6 +8,7 @@ package st.crexi.as3.framework.mercado.core
 		import st.crexi.as3.framework.cafe.core.Kitchen; Kitchen;
 		import st.crexi.as3.framework.cafe.core.Waiter; Waiter;
 		import st.crexi.as3.framework.cafe.core.Worker; Worker;
+		import st.crexi.as3.framework.cafe.core.AbstDependency; AbstDependency;
 		
 		import st.crexi.as3.framework.cafe.utils.AbstractObserver; AbstractObserver;
 		import st.crexi.as3.framework.cafe.utils.APIObserver; APIObserver;

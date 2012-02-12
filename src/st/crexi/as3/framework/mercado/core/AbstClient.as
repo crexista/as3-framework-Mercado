@@ -24,8 +24,7 @@ package st.crexi.as3.framework.mercado.core
 		 */		
 		final internal function $start():void
 		{
-			if (!_waiter) _waiter = new Waiter(null);
-			_waiter.start();
+			IClient(this).order.start();
 		}
 
 		

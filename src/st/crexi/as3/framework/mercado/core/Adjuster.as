@@ -17,9 +17,7 @@ package st.crexi.as3.framework.mercado.core
 		public function beginings(clients:Array):Align
 		{
 			_clients = Vector.<IClient>(clients);
-			for each(var client:AbstClient in clients) {
-				client.$start();
-			}
+
 			_clientLine.push(_clients);
 			return new Align(_clientLine);
 		}
@@ -30,10 +28,9 @@ package st.crexi.as3.framework.mercado.core
 			var resultClients:Vector.<IClient> = new Vector.<IClient>;
 			
 			for each(var clients:Vector.<IClient> in _clientLine) {
-				trace("client is ", clients.length);
+				
 				resultClients = resultClients.concat(clients)
 			}
-			trace(resultClients.length);
 			return resultClients;
 		}
 		

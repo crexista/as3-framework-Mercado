@@ -18,6 +18,6 @@ package st.crexi.as3.framework.mercado.core.interfaces
 		 * @return 
 		 * 
 		 */		
-		function get requests():Array;
+		function get order():IOrder;
 	}
 }
