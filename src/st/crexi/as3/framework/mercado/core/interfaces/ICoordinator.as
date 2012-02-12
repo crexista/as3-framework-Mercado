@@ -41,8 +41,9 @@ package st.crexi.as3.framework.mercado.core.interfaces
 		
 		/**
 		 * フレームワークそのものをスタートさせます
+		 * TODO このメソッドでargumetを渡す様にできるか考慮
 		 * 
-		 */		
+		 */
 		function start():void;
 	}
 }
