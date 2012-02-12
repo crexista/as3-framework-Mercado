@@ -16,7 +16,7 @@ package st.crexi.as3.framework.mercado.core
 		import st.crexi.as3.framework.cafe.core.interfaces.IOrder; IOrder;
 		import st.crexi.as3.framework.cafe.core.interfaces.ITask; ITask;
 		
-		import st.crexi.as3.framework.cafe.utils.AbstractObserver; AbstractObserver;
+		import st.crexi.as3.framework.cafe.utils.AbstObserver; AbstObserver;
 		import st.crexi.as3.framework.cafe.utils.APIObserver; APIObserver;
 		import st.crexi.as3.framework.cafe.utils.ReflectionUtil; ReflectionUtil;
 		import st.crexi.as3.framework.cafe.utils.interfaces.IObserver; IObserver;
