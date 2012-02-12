@@ -24,7 +24,7 @@ package st.crexi.as3.framework.mercado.core
 		 */		
 		final internal function $start():void
 		{
-			IClient(this).order.start();
+			IClient(this).order.start(IClient(this).arguments);
 		}
 
 		
