@@ -1,5 +1,7 @@
 package st.crexi.as3.framework.mercado.core.utils
 {
+	import st.crexi.as3.framework.mercado.core.interfaces.IClient;
+
 	[ExcludeClass]
 	public class Listener
 	{
@@ -30,7 +32,7 @@ package st.crexi.as3.framework.mercado.core.utils
 		
 		
 		
-		public function get waitTarget():*
+		public function get waitTarget():IClient
 		{
 			return _waitTarget;
 		}

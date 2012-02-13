@@ -2,6 +2,8 @@
 <flexLibProperties includeAllClasses="true" useMultiPlatformConfig="false" version="3">
   <includeClasses>
     <classEntry path="st.crexi.as3.framework.mercado.core.CafeClasses"/>
+    <classEntry path="st.crexi.as3.framework.mercado.core.ClientStatusType"/>
+    <classEntry path="st.crexi.as3.framework.mercado.core.events.ClientEvent"/>
   </includeClasses>
   <includeResources/>
   <namespaceManifests/>

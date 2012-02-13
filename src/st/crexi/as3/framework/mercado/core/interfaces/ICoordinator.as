@@ -5,7 +5,7 @@ package st.crexi.as3.framework.mercado.core.interfaces
 
 	/**
 	 * coordinatorのインターフェースです
-	 * @author kaoru_shibasaki
+	 * @author kaora_crexista
 	 * 
 	 */	
 	public interface ICoordinator
