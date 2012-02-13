@@ -120,7 +120,7 @@ package st.crexi.as3.framework.mercado.core
 		{
 			_adjuster = new Adjuster();
 			_liner = new Liner();
-			
+			_methodDic = new Dictionary();
 		}
 		
 		
