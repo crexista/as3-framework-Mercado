@@ -24,7 +24,7 @@ package st.crexi.as3.framework.mercado.core
 		/**
 		 * clientの状態です
 		 */		
-		private var _status:String;
+		internal var $status:String;
 		
 		
 		/**
@@ -56,7 +56,7 @@ package st.crexi.as3.framework.mercado.core
 		 */		
 		final public function get status():String
 		{
-			return _status 
+			return $status 
 		}
 		
 		

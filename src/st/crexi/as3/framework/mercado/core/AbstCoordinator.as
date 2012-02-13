@@ -106,7 +106,9 @@ package st.crexi.as3.framework.mercado.core
 			
 			for each(var client:AbstClient in _adjuster.contain) {
 				client.$coordinator = ICoordinator(this);
+				client.$status = ClientStatusType.RUNNING;
 				client.start();
+				
 			}						
 		}
 		
