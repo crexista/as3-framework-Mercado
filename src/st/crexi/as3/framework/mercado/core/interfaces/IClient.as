@@ -1,8 +1,8 @@
 package st.crexi.as3.framework.mercado.core.interfaces
 {
 	import flash.events.IEventDispatcher;
-	
-	import st.crexi.as3.framework.cafe.core.interfaces.IOrder;
+		
+	import st.crexi.as3.framework.cafe.core.interfaces.IOrder2;
 
 	public interface IClient
 	{
@@ -28,7 +28,7 @@ package st.crexi.as3.framework.mercado.core.interfaces
 		 * @return 
 		 * 
 		 */		
-		function get order():IOrder;
+		function get order():IOrder2;
 		
 		
 		/**

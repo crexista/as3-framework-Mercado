@@ -44,7 +44,8 @@ package st.crexi.as3.framework.mercado.core
 		 */		
 		final public function start():void
 		{
-			IClient(this).order.start(IClient(this).arguments);
+			IClient(this).order.initialize((IClient(this).arguments));
+			IClient(this).order.start();
 		}
 		
 		
