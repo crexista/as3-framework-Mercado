@@ -2,6 +2,8 @@ package st.crexi.as3.framework.mercado.core
 {
 	import flash.utils.Dictionary;
 	
+	import st.crexi.as3.framework.cafe.core.Waiter;
+	import st.crexi.as3.framework.cafe.core.interfaces.IRequest;
 	import st.crexi.as3.framework.mercado.core.events.ClientEvent;
 	import st.crexi.as3.framework.mercado.core.interfaces.IClient;
 	import st.crexi.as3.framework.mercado.core.interfaces.ICoordinator;
@@ -56,8 +58,8 @@ package st.crexi.as3.framework.mercado.core
 			
 			
 			for each(var method:Listener in methods) {
-				
-				if (client.status != ClientStatusType.RUNNING) {
+
+				if (method.waitTarget.status != ClientStatusType.RUNNING) {
 					if (!method.waitTarget.statusInfo.hasEventListener(ClientStatusType.RUNNING)) {					
 						method.waitTarget.statusInfo.addEventListener(ClientStatusType.RUNNING, onResolved);
 					}
@@ -101,12 +103,15 @@ package st.crexi.as3.framework.mercado.core
 		final public function start():void
 		{
 			
+			var waiter:Waiter = new Waiter();
+			if (ICoordinator(this).apis) waiter.start(ICoordinator(this).apis.asArray);
 			_adjuster = ICoordinator(this).clients(_adjuster);
 			_liner = ICoordinator(this).bind(_liner);
 			
 			for each(var client:AbstClient in _adjuster.contain) {
 				client.$coordinator = ICoordinator(this);
-				client.$status = ClientStatusType.RUNNING;
+				client.$status = ClientStatusType.INVOKING;
+				client.statusInfo.addEventListener(ClientStatusType.RUNNING, onResolved);
 				client.start();
 				
 			}						
@@ -135,7 +140,7 @@ class QueMethod
 	private var _func:Function;
 	public function get func():Function
 	{
-		return func;
+		return _func;
 	}
 	
 	

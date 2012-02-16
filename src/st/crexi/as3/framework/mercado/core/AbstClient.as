@@ -3,7 +3,9 @@ package st.crexi.as3.framework.mercado.core
 	import flash.events.EventDispatcher;
 	import flash.events.IEventDispatcher;
 	
+	import st.crexi.as3.framework.cafe.core.Event.WaiterEvent;
 	import st.crexi.as3.framework.cafe.core.Waiter;
+	import st.crexi.as3.framework.mercado.core.events.ClientEvent;
 	import st.crexi.as3.framework.mercado.core.interfaces.IClient;
 	import st.crexi.as3.framework.mercado.core.interfaces.ICoordinator;
 
@@ -16,10 +18,7 @@ package st.crexi.as3.framework.mercado.core
 		internal var $coordinator:ICoordinator
 		
 		
-		/**
-		 * orderの処理を請け負っているwaiterです
-		 */		
-		private var _waiter:Waiter;
+
 		
 		/**
 		 * clientの状態です
@@ -44,8 +43,23 @@ package st.crexi.as3.framework.mercado.core
 		 */		
 		final public function start():void
 		{
-			IClient(this).order.initialize((IClient(this).arguments));
-			IClient(this).order.start();
+			var requestArray:Array = IClient(this).requests($coordinator.apis);
+
+			if (requestArray == null || requestArray.length == 0) {
+				$status = ClientStatusType.RUNNING;
+				_statusInfo.dispatchEvent(new ClientEvent(ClientStatusType.RUNNING, IClient(this)));
+				return;
+			}
+			var waiter:Waiter = new Waiter();
+			
+			waiter.notifier.addEventListener(WaiterEvent.ALL_COMPLETE, onComplete);
+			waiter.start(requestArray);
+		}
+		
+		protected function onComplete(event:WaiterEvent):void
+		{
+			$status = ClientStatusType.RUNNING;
+			_statusInfo.dispatchEvent(new ClientEvent(ClientStatusType.RUNNING, IClient(this)));
 		}
 		
 		

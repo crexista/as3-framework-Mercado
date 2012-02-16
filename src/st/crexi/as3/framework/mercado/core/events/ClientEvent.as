@@ -25,6 +25,7 @@ package st.crexi.as3.framework.mercado.core.events
 		 */		
 		public function ClientEvent(type:String, client:IClient)
 		{
+			_client = client
 			super(type);
 		}
 		
@@ -37,7 +38,7 @@ package st.crexi.as3.framework.mercado.core.events
 		 */		
 		public function get client():IClient
 		{
-			return client;
+			return _client;
 		}
 		
 

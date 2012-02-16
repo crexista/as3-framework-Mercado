@@ -1,6 +1,7 @@
 package st.crexi.as3.framework.mercado.core.interfaces
-{
+{	
 	import st.crexi.as3.framework.mercado.core.Adjuster;
+	import st.crexi.as3.framework.mercado.core.utils.AbstAccessObject;
 	import st.crexi.as3.framework.mercado.core.utils.Liner;
 
 	/**
@@ -10,6 +11,18 @@ package st.crexi.as3.framework.mercado.core.interfaces
 	 */	
 	public interface ICoordinator
 	{
+		
+	
+		
+		/**
+		 * client全体で使われるrequestの集合orderを返します.
+		 * 主にAPI等へのrequestリストを返します
+		 * @return 
+		 * 
+		 */		
+		function get apis():IAccessObject;
+
+
 		
 		/**
 		 * イベント配線を行います
@@ -26,6 +39,8 @@ package st.crexi.as3.framework.mercado.core.interfaces
 		 * 
 		 */		
 		function clients(adjuster:Adjuster):Adjuster;
+		
+		
 		
 		
 		/**

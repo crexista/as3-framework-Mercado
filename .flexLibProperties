@@ -4,6 +4,8 @@
     <classEntry path="st.crexi.as3.framework.mercado.core.CafeClasses"/>
     <classEntry path="st.crexi.as3.framework.mercado.core.ClientStatusType"/>
     <classEntry path="st.crexi.as3.framework.mercado.core.events.ClientEvent"/>
+    <classEntry path="st.crexi.as3.framework.mercado.core.utils.AbstAccessObject"/>
+    <classEntry path="st.crexi.as3.framework.mercado.core.interfaces.IAccessObject"/>
   </includeClasses>
   <includeResources/>
   <namespaceManifests/>
